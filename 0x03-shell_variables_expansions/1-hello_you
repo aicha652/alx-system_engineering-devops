@@ -1,2 +1,3 @@
 #!/bin/bash
-echo hello user
+USER="`id -un`"
+echo "hello $USER"
