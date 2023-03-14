@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $NUM.00
+echo $NUM | bc -l | xargs printf "%0.2f\n"
