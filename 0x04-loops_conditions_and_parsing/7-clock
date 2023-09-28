@@ -5,10 +5,6 @@ min=1
 while((hr <= 12))
 do
 	echo "Hour: ${hr}"
-	if [[ $hr -eq 12 ]]
-	then
-		break
-	fi
 	while((min <= 59))
 	do
 		echo $min
