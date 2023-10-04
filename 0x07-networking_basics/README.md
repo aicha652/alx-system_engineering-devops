@@ -1,4 +1,4 @@
-##General
+## General
 
 .Allowed editors: vi, vim, emacs\
 .All your Bash script files will be interpreted on Ubuntu 20.04 LTS\
