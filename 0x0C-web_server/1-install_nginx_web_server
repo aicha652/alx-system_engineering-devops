@@ -8,8 +8,8 @@ server {
     listen 80;
 
     location / {
-        add_header Content-Type text/html;
+        root /root/alx-system_engineering-devops/0x0C-web_server 
 
-        return 200 '<html><body>Hello World</body></html>';
+        index some_page.html;
     }
 }
