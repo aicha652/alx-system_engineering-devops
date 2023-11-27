@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # Bash script that configures a new Ubuntu machine
+sudo apt update
+
+sudo apt install nginx
+
 server {
     listen 80;
 
