@@ -5,4 +5,4 @@ sudo apt update
 sudo apt install nginx
 
 echo Hello World! > /var/www/html/index.nginx-debian.html
-sed -i '80' /etc/nginx/sites-enabled/default
+sed -i 's/listen 8080;/listen 80;/' /etc/nginx/sites-enabled/default
