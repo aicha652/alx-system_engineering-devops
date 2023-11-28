@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 # Bash script that transfers a file from our client to a server
+
+# if less than 3 parameters passed
 args=$#
 if [[ args -lt 3 ]]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit
 fi
+
 # The path to the file to be transferred: ~/
+
+#4 parameters
 file_name="$1"
 IP="$2"
 username="$3"
 ssh_key="$4"
 
-scp -i ${ssh_key} ${file_name} ${username}@${IP}:~/
+scp -i "${ssh_key}" "${file_name}" "${username}"@"${IP}":~/
