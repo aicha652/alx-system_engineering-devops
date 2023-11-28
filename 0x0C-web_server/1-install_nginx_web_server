@@ -4,12 +4,5 @@ sudo apt update
 
 sudo apt install nginx
 
-server {
-    listen 80;
-
-    location / {
-        root /root/alx-system_engineering-devops/0x0C-web_server 
-
-        index some_page.html;
-    }
-}
+echo Hello World! > /tmp/test
+sed -i '80' /etc/nginx/sites-enabled/default
