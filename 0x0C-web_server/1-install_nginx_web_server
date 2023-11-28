@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Bash script that configures a new Ubuntu machine
-sudo apt update
+sudo apt-get update
 
-sudo apt install nginx
+sudo apt-get install nginx
 
 echo Hello World! > /var/www/html/index.nginx-debian.html
 sed -i 's/listen 8080;/listen 80;/' /etc/nginx/nginx.conf
