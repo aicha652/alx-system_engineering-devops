@@ -6,3 +6,5 @@ sudo apt install nginx
 
 echo Hello World! > /var/www/html/index.nginx-debian.html
 sed -i 's/listen 8080;/listen 80;/' /etc/nginx/nginx.conf
+
+sudo service nginx restart
