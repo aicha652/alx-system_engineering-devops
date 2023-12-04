@@ -9,5 +9,5 @@ ssh -i ~/.ssh/school ubuntu@100.25.157.87
 sudo apt-get update
 sudo apt-get -y install nginx
 
-sudo sed -i 'add_header X-Served-By $hostname' /etc/nginx/site-availables/default
+sudo sed -i 's/add_header X-Served-By \$hostname;/' /etc/nginx/site-available/default
 sudo service nginx restart
