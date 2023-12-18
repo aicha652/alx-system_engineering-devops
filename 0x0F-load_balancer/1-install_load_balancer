@@ -17,8 +17,8 @@ backend aicha-domain.tech_backend
     timeout connect  3000
     timeout server  30000
     balance roundrobin
-    server 393788-web-01 54.237.19.164:80 check
-    server 393788-web-02 54.174.170.184:80 check
+    server 393788-web-01 54.236.41.36:80 check
+    server 393788-web-02 52.91.156.164:80 check
 EOT
 
 sudo service haproxy restart
