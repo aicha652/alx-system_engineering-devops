@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# the script should run the whoami command
+# under the user passed as an argument
+grep -wF -e "$(whoami)" "$1"
