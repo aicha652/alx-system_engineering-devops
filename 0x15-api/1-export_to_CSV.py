@@ -18,7 +18,7 @@ if __name__ == '__main__':
     user = user_data.json()
     todos = todo_data.json()
 
-    username = user.get("name")
+    username = user.get("username")
 
     with open(csv_filename, "w") as f:
         for todo in todos:
