@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Create a fucntion"""
+"""Create a fucntion that queries the Reddit API"""
 import requests
 
 
