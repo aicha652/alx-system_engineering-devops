@@ -2,36 +2,35 @@
 # Nginx must serve this page both locally and on its public IP on port 80
 # Nginx should proxy requests to the route
 
-
 server {
-  listen 80 default_server;
-  listen[::]:80 default_server;
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
-  # @IP of server as domain name
-  server_name 54.236.41.36
+    # Use IP of server as domain name
+    server_name 54.236.41.36
 
-  # Customize HTTP rsponse header
-  add_header X-Serverd-By 393788-web-01;
+    # Customize HTTP response header
+    add_header X-Served-By 228560-web-01;
 
-  # Serve /airbnb-onepage/ route on AirBnB_clone_v3
-  location = /airbnb-onepage/ {
+    # Serve /airbnb-onepage/ route on AirBnB_clone_v3
+    location = /airbnb-onepage/ {
         proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
-  }
-  
-  location /airbnb-dynamic/number_odd_or_even/ {
-                proxy_pass http://localhost:5001/number_odd_or_even/;
-                proxy_redirect off;
-  }
+    }
 
-  location /api/ {
-                proxy_pass http://localhost:5002/api/;
-                proxy_redirect off;
-  }
+    # Serve /number_odd_or_even/ route on AirBnB_clone_v2
+    location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+    }
 
+    # Serve API on AirBnB_clone_v3
+    location /api/ {
+        proxy_pass http://127.0.0.1:5002/;
+    }
 
-  error_page 404 /404.html;
+    error_page 404 /404.html;
     location /404 {
       root /var/www/html;
       internal;
-  }
+    }
 }
+
