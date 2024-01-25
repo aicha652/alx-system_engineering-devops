@@ -25,8 +25,9 @@ server {
 
   # Serve API on AirBnB_clone_v3
   location /api/ {
-        proxy_pass http://127.0.0.1:5002/api/;
+        proxy_pass http://127.0.0.1:5002/;
   }
+
 
   error_page 404 /404.html;
     location /404 {
