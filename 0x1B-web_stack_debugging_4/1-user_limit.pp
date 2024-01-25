@@ -1,11 +1,11 @@
 #Increase hard file limit for Holberton user
 
-exec {'increase-hard-file-limit-for-holberton-user':
-  command => 'sed -i "/^holberton hard/s/4/50000/" /etc/security/limits.conf',
-  path    => '/usr/local/bin/:/bin/'
+exec { 'increase_hard_limit_for_holberton':
+  command  => 'sed -i "/holberton hard/s/5/2048/" /etc/security/limits.conf',
+  provider => 'shell'
 }
 
-exec {'increase-soft-file-limit-for-holberton-user':
-  command => 'sed -i "/^holberton soft/s/5/50000/" /etc/security/limits.conf',
-  path    => '/usr/local/bin/:/bin/'
+exec { 'increase_soft_limit_for_holberton':
+  command  => 'sed -i "/holberton soft/s/4/2048/" /etc/security/limits.conf',
+  provider => 'shell'
 }
